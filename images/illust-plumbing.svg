@@ -32,7 +32,7 @@
   <!-- 給水管 -->
   <path d="M0 270 H318 V232" stroke="#1f5aa6" stroke-width="12" fill="none"/>
   <path d="M0 270 H318" stroke="#bfe3ff" stroke-width="3" fill="none" class="flow"/>
-  <rect x="30" y="252" width="44" height="34" rx="3" fill="#0b2a55"/><rect x="38" y="260" width="28" height="10" rx="2" fill="#bfe3ff"/>
+  <rect x="80" y="252" width="44" height="34" rx="3" fill="#0b2a55"/><rect x="88" y="260" width="28" height="10" rx="2" fill="#bfe3ff"/>
   <!-- 排水管 → 浄化槽 -->
   <path d="M200 232 V310 H400" stroke="#8e9aa7" stroke-width="14" fill="none"/>
   <path d="M200 310 H400" stroke="#d6dde5" stroke-width="3" fill="none" class="flow"/>

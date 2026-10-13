@@ -127,58 +127,42 @@ h1, h2, h3, p { margin: 0; }
 .menu-btn[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
 .menu-btn[aria-expanded="true"] span:nth-child(3) { top: 50%; transform: rotate(-45deg); }
 
-/* ---------- メインビジュアル ---------- */
+/* ---------- メインビジュアル ----------
+   文字エリアとイラストエリアを上下に分け、文字がイラストに重ならないようにする */
 .hero {
-  position: relative; height: 100vh; height: 100svh; min-height: 640px;
-  overflow: hidden; color: var(--navy); background: #e6f0fa;
-}
-.hero__illust {
-  position: absolute; inset: 0; width: 100%; height: 100%;
-  object-fit: cover; object-position: center bottom;
+  display: flex; flex-direction: column; min-height: 100vh; min-height: 100svh;
+  color: var(--navy); background: linear-gradient(180deg, #dcebfa 0%, #f6f9fd 70%);
 }
 .hero__content {
-  position: absolute; left: 0; right: 0; top: calc(var(--header-h) + 8vh);
-  max-width: 1200px; margin: 0 auto; padding: 0 32px;
+  width: 100%; max-width: 1200px; margin: 0 auto;
+  padding: calc(var(--header-h) + 6vh) 32px 40px;
 }
 .hero__en {
   font: 500 clamp(13px, 1.2vw, 16px)/1.6 var(--font-en);
-  letter-spacing: .2em; color: var(--blue); margin-bottom: 20px;
+  letter-spacing: .2em; color: var(--blue); margin-bottom: 16px;
 }
 .hero__title {
   font-family: var(--font-serif); font-weight: 700;
-  font-size: clamp(32px, 5vw, 66px); line-height: 1.45; letter-spacing: .08em;
+  font-size: clamp(30px, 4.6vw, 62px); line-height: 1.45; letter-spacing: .08em;
 }
 .hero__text {
   display: inline-block; margin-top: 24px; padding: 6px 16px;
   font-size: clamp(14px, 1.3vw, 17px); font-weight: 700;
   background: var(--navy); color: #fff;
 }
-
-.hero__scroll {
-  position: absolute; left: 32px; bottom: 0;
-  writing-mode: vertical-rl; font: 500 11px/1 var(--font-en); letter-spacing: .25em;
-  padding-bottom: 90px; color: #fff;
+.hero__visual {
+  position: relative; flex: 1 0 auto;
+  min-height: max(280px, 38.9vw); /* イラスト全体（1440×560）が切れずに収まる高さ */
 }
-.hero__scroll::after {
-  content: ""; position: absolute; left: 50%; bottom: 0;
-  width: 1px; height: 76px; background: rgba(255,255,255,.4);
-}
-.hero__scroll::before {
-  content: ""; position: absolute; left: 50%; bottom: 0; z-index: 1;
-  width: 1px; height: 76px; background: #fff;
-  animation: scroll 2.2s infinite;
-}
-@keyframes scroll {
-  0%   { transform: scaleY(0); transform-origin: top; }
-  50%  { transform: scaleY(1); transform-origin: top; }
-  51%  { transform: scaleY(1); transform-origin: bottom; }
-  100% { transform: scaleY(0); transform-origin: bottom; }
+.hero__illust {
+  position: absolute; inset: 0; width: 100%; height: 100%;
+  object-fit: cover; object-position: center bottom;
 }
 
 /* ---------- 私たちについて ---------- */
-.about { position: relative; padding: 140px 0 120px; overflow: hidden; }
+.about { position: relative; padding: 40px 0 120px; overflow: hidden; }
 .bg-text {
-  position: absolute; top: 40px; right: -20px; white-space: nowrap; pointer-events: none;
+  margin: 0 -20px 48px 0; text-align: right; white-space: nowrap; pointer-events: none;
   font: 600 clamp(80px, 13vw, 200px)/1 var(--font-en); color: var(--bg-gray); letter-spacing: .02em;
 }
 .about__inner {
@@ -222,15 +206,15 @@ h1, h2, h3, p { margin: 0; }
 .service-item:hover .service-item__photo img { transform: scale(1.04); }
 .service-item__body {
   position: relative; z-index: 1; background: #fff;
-  margin-left: -80px; padding: 56px 56px 52px;
+  margin-left: -48px; padding: 56px 56px 52px;
   box-shadow: 0 10px 40px rgba(11,42,85,.08);
 }
 .service-item--reverse { grid-template-columns: 1fr 58%; }
 .service-item--reverse .service-item__photo { order: 2; }
-.service-item--reverse .service-item__body { margin-left: 0; margin-right: -80px; }
+.service-item--reverse .service-item__body { margin-left: 0; margin-right: -48px; }
 .service-item__num {
-  position: absolute; top: -44px; right: 40px;
-  font: 600 88px/1 var(--font-en); color: var(--blue);
+  position: absolute; top: 40px; right: 48px;
+  font: 600 72px/1 var(--font-en); color: var(--blue-light);
 }
 .service-item__en { font: 500 13px/1 var(--font-en); letter-spacing: .2em; color: var(--accent-dark); margin-bottom: 12px; }
 .service-item__title { font-size: clamp(22px, 2.2vw, 28px); color: var(--navy); margin-bottom: 20px; }
@@ -345,7 +329,6 @@ h1, h2, h3, p { margin: 0; }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   .js-fade { opacity: 1; transform: none; transition: none; }
-  .hero__scroll::before { animation: none; }
 }
 
 /* ==========================================================
@@ -384,7 +367,7 @@ h1, h2, h3, p { margin: 0; }
   .service-item--reverse { grid-template-columns: 1fr; padding: 0 32px; }
   .service-item--reverse .service-item__photo { order: 0; }
   .service-item__body,
-  .service-item--reverse .service-item__body { margin: -60px 24px 0; padding: 48px 32px 36px; }
+  .service-item--reverse .service-item__body { margin: 0; padding: 40px 32px 36px; }
   .strength-list { grid-template-columns: 1fr; gap: 32px; }
   .strength-item { padding: 0 0 32px; }
   .strength-item + .strength-item { border-left: 0; border-top: 1px solid rgba(255,255,255,.2); padding-top: 32px; }
@@ -394,7 +377,8 @@ h1, h2, h3, p { margin: 0; }
 }
 
 @media (max-width: 600px) {
-  .container, .hero__content { padding-left: 16px; padding-right: 16px; }
+  .container { padding-left: 16px; padding-right: 16px; }
+  .hero__content { padding: calc(var(--header-h) + 4vh) 16px 32px; }
   .header__inner { padding-left: 16px; }
   .pc-only { display: none; }
   .logo__mark { width: 38px; height: 38px; font-size: 20px; }
@@ -403,10 +387,9 @@ h1, h2, h3, p { margin: 0; }
 
   .heading { margin-bottom: 40px; }
   .lead { margin: -16px 0 40px; }
-  .hero__content { top: calc(var(--header-h) + 5vh); }
-  .hero__scroll { left: 16px; }
 
-  .about { padding: 96px 0 80px; }
+  .about { padding: 24px 0 80px; }
+  .bg-text { margin-bottom: 32px; }
   .about__photo { margin-right: 16px; }
   .about__photo::before { inset: 16px -16px -16px 16px; }
   .numbers { grid-template-columns: 1fr; margin-top: 80px; }
@@ -418,8 +401,8 @@ h1, h2, h3, p { margin: 0; }
   .recruit { padding: 96px 0; }
   .service-item, .service-item--reverse { padding: 0 16px; }
   .service-item__body,
-  .service-item--reverse .service-item__body { margin: -40px 12px 0; padding: 40px 24px 28px; }
-  .service-item__num { font-size: 64px; top: -32px; right: 20px; }
+  .service-item--reverse .service-item__body { margin: 0; padding: 32px 24px 28px; }
+  .service-item__num { font-size: 56px; top: 28px; right: 20px; }
 
   .works-grid, .flow-list { grid-template-columns: 1fr; }
   .company-table th,
