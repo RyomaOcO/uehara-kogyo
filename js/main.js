@@ -28,7 +28,7 @@
   if (!('IntersectionObserver' in window)) return;
 
   var targets = document.querySelectorAll(
-    '.section__title, .section__desc, .about__text, .num-card, .biz-card, .strength-item, .flow-step, .recruit__inner, .company__inner'
+    '.section__title, .section__desc, .about__text, .num-card, .biz-card, .work-card, .strength-item, .flow-step, .recruit__inner, .company__inner'
   );
   var observer = new IntersectionObserver(function (entries) {
     entries.forEach(function (entry) {

@@ -221,7 +221,8 @@ h1, h2, h3, p { margin: 0; }
   box-shadow: 0 4px 20px rgba(11,42,85,.06);
   transition: transform .3s, box-shadow .3s;
 }
-.biz-card:hover { transform: translateY(-6px); box-shadow: 0 12px 32px rgba(11,42,85,.14); }
+.biz-card:hover,
+.biz-card.is-in:hover { transform: translateY(-6px); box-shadow: 0 12px 32px rgba(11,42,85,.14); }
 .biz-card__icon {
   width: 72px; height: 72px; padding: 14px; border-radius: 50%;
   background: var(--blue-light); color: var(--blue); margin-bottom: 20px;
@@ -341,19 +342,7 @@ h1, h2, h3, p { margin: 0; }
 /* ==========================================================
    レスポンシブ
    ========================================================== */
-@media (max-width: 1100px) {
-  .gnav__list { gap: 18px; }
-  .gnav__list a { font-size: 14px; }
-  .biz-grid { grid-template-columns: repeat(2, 1fr); }
-  .flow-list { grid-template-columns: repeat(3, 1fr); }
-  .flow-step::after { display: none; }
-}
-
-@media (max-width: 900px) {
-  :root { --header-h: 64px; }
-  .logo__mark { width: 40px; height: 40px; font-size: 22px; }
-  .logo__ja { font-size: 16px; }
-
+@media (max-width: 1200px) {
   .menu-btn { display: block; }
   .gnav {
     position: fixed; top: var(--header-h); left: 0; right: 0; bottom: 0;
@@ -366,6 +355,19 @@ h1, h2, h3, p { margin: 0; }
   .gnav__list a { display: block; padding: 18px 4px; font-size: 16px; border-bottom: 1px solid var(--line); }
   .gnav__list a::after { display: none; }
   .gnav__cta { margin-top: 28px; padding: 16px; }
+}
+
+@media (max-width: 1100px) {
+  .biz-grid { grid-template-columns: repeat(2, 1fr); }
+  .flow-list { grid-template-columns: repeat(3, 1fr); }
+  .flow-step::after { display: none; }
+}
+
+@media (max-width: 900px) {
+  :root { --header-h: 64px; }
+  .logo__mark { width: 40px; height: 40px; font-size: 22px; }
+  .logo__ja { font-size: 16px; }
+
 
   .section { padding: 80px 0; }
   .about__inner,
@@ -392,4 +394,31 @@ h1, h2, h3, p { margin: 0; }
   .license-list { grid-template-columns: 1fr 1fr; gap: 2px 12px; }
   .contact__tel { flex-direction: column; gap: 10px; padding: 20px 24px; width: 100%; }
   .btn--lg { width: 100%; padding: 18px 20px; }
+}
+
+/* ---------- 施工事例 ---------- */
+.works-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; }
+.work-card {
+  margin: 0; background: #fff; border-radius: 6px; overflow: hidden;
+  box-shadow: 0 4px 20px rgba(11,42,85,.08);
+  transition: transform .3s, box-shadow .3s;
+}
+.work-card:hover,
+.work-card.is-in:hover { transform: translateY(-6px); box-shadow: 0 12px 32px rgba(11,42,85,.16); }
+.work-card__img { aspect-ratio: 43 / 30; overflow: hidden; background: var(--bg-gray); }
+.work-card__img img { width: 100%; height: 100%; object-fit: cover; transition: transform .5s; }
+.work-card:hover .work-card__img img { transform: scale(1.05); }
+.work-card__body { padding: 24px 24px 28px; }
+.work-card__cat {
+  display: inline-block; font-size: 12px; font-weight: 700; color: var(--blue);
+  border-left: 3px solid var(--accent); padding-left: 8px; margin-bottom: 8px;
+}
+.work-card__body h3 { font-size: 19px; color: var(--navy); margin-bottom: 8px; }
+.work-card__body p { font-size: 14px; color: var(--text-sub); }
+
+@media (max-width: 900px) {
+  .works-grid { grid-template-columns: repeat(2, 1fr); gap: 24px; }
+}
+@media (max-width: 600px) {
+  .works-grid { grid-template-columns: 1fr; }
 }
