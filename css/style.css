@@ -1,0 +1,395 @@
+/* ==========================================================
+   株式会社上原工業 公式サイト
+   ========================================================== */
+
+:root {
+  --navy: #0b2a55;
+  --blue: #1f5aa6;
+  --blue-light: #e8f0fa;
+  --accent: #f4b400;
+  --accent-dark: #d99c00;
+  --text: #222;
+  --text-sub: #555;
+  --line: #dde3ea;
+  --bg: #ffffff;
+  --bg-gray: #f5f7fa;
+  --header-h: 80px;
+  --font: "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+  --font-serif: "Noto Serif JP", "Hiragino Mincho ProN", "Yu Mincho", serif;
+}
+
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; scroll-padding-top: var(--header-h); }
+
+body {
+  margin: 0;
+  font-family: var(--font);
+  color: var(--text);
+  background: var(--bg);
+  line-height: 1.9;
+  letter-spacing: .04em;
+  -webkit-font-smoothing: antialiased;
+}
+
+img, svg { display: block; max-width: 100%; }
+a { color: inherit; text-decoration: none; }
+ul, ol { margin: 0; padding: 0; list-style: none; }
+h1, h2, h3, p { margin: 0; }
+
+.container { width: 100%; max-width: 1160px; margin: 0 auto; padding: 0 24px; }
+.sp-only { display: none; }
+
+/* ---------- ボタン ---------- */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center;
+  gap: .5em; padding: 14px 32px; border-radius: 4px;
+  font-weight: 700; font-size: 15px; transition: .25s;
+  border: 2px solid transparent;
+}
+.btn::after { content: "→"; transition: transform .25s; }
+.btn:hover::after { transform: translateX(4px); }
+.btn--primary { background: var(--blue); color: #fff; }
+.btn--primary:hover { background: var(--navy); }
+.btn--white { background: #fff; color: var(--navy); }
+.btn--white:hover { background: var(--blue-light); }
+.btn--accent { background: var(--accent); color: var(--navy); }
+.btn--accent:hover { background: var(--accent-dark); }
+.btn--lg { padding: 20px 44px; font-size: 17px; }
+
+/* ---------- ヘッダー ---------- */
+.header {
+  position: fixed; inset: 0 0 auto 0; z-index: 100;
+  height: var(--header-h); background: rgba(255,255,255,.97);
+  box-shadow: 0 2px 12px rgba(0,0,0,.06);
+}
+.header__inner {
+  height: 100%; max-width: 1400px; margin: 0 auto; padding: 0 24px;
+  display: flex; align-items: center; justify-content: space-between;
+}
+.logo { display: flex; align-items: center; gap: 12px; }
+.logo__mark {
+  width: 46px; height: 46px; border-radius: 6px; flex-shrink: 0;
+  display: grid; place-items: center;
+  background: linear-gradient(135deg, var(--blue), var(--navy));
+  color: #fff; font: 900 26px/1 var(--font-serif);
+  border-bottom: 4px solid var(--accent);
+}
+.logo__text { display: flex; flex-direction: column; line-height: 1.3; }
+.logo__ja { font-weight: 700; font-size: 19px; color: var(--navy); letter-spacing: .08em; }
+.logo__en { font-size: 10px; color: var(--text-sub); letter-spacing: .12em; }
+
+.gnav { display: flex; align-items: center; gap: 28px; }
+.gnav__list { display: flex; gap: 28px; }
+.gnav__list a {
+  position: relative; font-size: 15px; font-weight: 500; padding: 6px 0;
+}
+.gnav__list a::after {
+  content: ""; position: absolute; left: 0; bottom: 0;
+  width: 100%; height: 2px; background: var(--blue);
+  transform: scaleX(0); transform-origin: right; transition: transform .3s;
+}
+.gnav__list a:hover { color: var(--blue); }
+.gnav__list a:hover::after { transform: scaleX(1); transform-origin: left; }
+.gnav__cta { padding: 10px 22px; }
+.gnav__cta::after { display: none; }
+
+.menu-btn {
+  display: none; width: 44px; height: 44px; border: 0; background: none;
+  cursor: pointer; position: relative;
+}
+.menu-btn span {
+  position: absolute; left: 10px; width: 24px; height: 2px;
+  background: var(--navy); transition: .3s;
+}
+.menu-btn span:nth-child(1) { top: 14px; }
+.menu-btn span:nth-child(2) { top: 21px; }
+.menu-btn span:nth-child(3) { top: 28px; }
+.menu-btn[aria-expanded="true"] span:nth-child(1) { top: 21px; transform: rotate(45deg); }
+.menu-btn[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+.menu-btn[aria-expanded="true"] span:nth-child(3) { top: 21px; transform: rotate(-45deg); }
+
+/* ---------- メインビジュアル ---------- */
+.hero {
+  position: relative; min-height: 100vh; min-height: 100svh;
+  padding-top: var(--header-h);
+  display: flex; align-items: center; overflow: hidden; color: #fff;
+}
+.hero__bg { position: absolute; inset: 0; }
+.hero__bg svg { width: 100%; height: 100%; }
+.hero__bg::after {
+  content: ""; position: absolute; inset: 0;
+  background: linear-gradient(90deg, rgba(11,42,85,.85) 0%, rgba(11,42,85,.35) 60%, rgba(11,42,85,0) 100%);
+}
+.hero__content {
+  position: relative; z-index: 1;
+  width: 100%; max-width: 1160px; margin: 0 auto; padding: 0 24px 80px;
+}
+.hero__lead {
+  display: inline-block; font-size: 15px; font-weight: 700;
+  color: var(--accent); margin-bottom: 20px;
+  padding-left: 48px; position: relative;
+}
+.hero__lead::before {
+  content: ""; position: absolute; left: 0; top: 50%;
+  width: 36px; height: 2px; background: var(--accent);
+}
+.hero__title {
+  font-family: var(--font-serif); font-weight: 700;
+  font-size: clamp(34px, 5.6vw, 68px); line-height: 1.4; letter-spacing: .06em;
+  text-shadow: 0 2px 20px rgba(0,0,0,.3);
+}
+.hero__title span { color: #fff; }
+.hero__text { margin-top: 24px; font-size: clamp(15px, 1.4vw, 18px); opacity: .95; }
+.hero__btns { margin-top: 40px; display: flex; gap: 16px; flex-wrap: wrap; }
+
+.hero__scroll {
+  position: absolute; z-index: 1; left: 50%; bottom: 24px; transform: translateX(-50%);
+  font-size: 11px; letter-spacing: .2em; padding-bottom: 50px;
+}
+.hero__scroll::after {
+  content: ""; position: absolute; left: 50%; bottom: 0;
+  width: 1px; height: 42px; background: #fff;
+  animation: scroll 2s infinite;
+}
+@keyframes scroll {
+  0%   { transform: scaleY(0); transform-origin: top; }
+  50%  { transform: scaleY(1); transform-origin: top; }
+  51%  { transform: scaleY(1); transform-origin: bottom; }
+  100% { transform: scaleY(0); transform-origin: bottom; }
+}
+
+/* ---------- お知らせ ---------- */
+.news { background: var(--bg-gray); border-bottom: 1px solid var(--line); }
+.news__inner { display: flex; align-items: center; gap: 40px; padding-top: 28px; padding-bottom: 28px; }
+.news__title {
+  flex-shrink: 0; font-size: 16px; color: var(--navy);
+  padding-right: 40px; border-right: 1px solid var(--line);
+}
+.news__list li { display: flex; align-items: center; gap: 20px; flex-wrap: wrap; }
+.news__list time { color: var(--text-sub); font-size: 14px; }
+.tag {
+  font-size: 12px; padding: 2px 12px; border-radius: 2px;
+  background: var(--blue); color: #fff;
+}
+.news__list a:hover { color: var(--blue); text-decoration: underline; }
+
+/* ---------- セクション共通 ---------- */
+.section { padding: 120px 0; }
+.section__en {
+  font-size: 14px; font-weight: 700; color: var(--blue);
+  letter-spacing: .25em; margin-bottom: 8px;
+}
+.section__en--center { text-align: center; }
+.section__en--light { color: var(--accent); }
+.section__title {
+  font-size: clamp(26px, 3.2vw, 38px); font-weight: 700;
+  color: var(--navy); line-height: 1.5; margin-bottom: 32px;
+}
+.section__title--center { text-align: center; }
+.section__title--light { color: #fff; }
+.section__desc { text-align: center; color: var(--text-sub); margin: -12px 0 56px; }
+
+/* ---------- 企業情報 ---------- */
+.about__inner { display: grid; grid-template-columns: 1.4fr 1fr; gap: 80px; align-items: center; }
+.about__text p:not(.section__en) { margin-bottom: 20px; }
+.about__sign {
+  margin-top: 32px; text-align: right;
+  font-family: var(--font-serif); font-size: 18px; color: var(--navy);
+}
+.about__numbers { display: grid; gap: 20px; }
+.num-card {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 28px 32px; background: var(--blue-light);
+  border-left: 6px solid var(--blue); border-radius: 4px;
+}
+.num-card__label { font-weight: 700; color: var(--navy); }
+.num-card__value {
+  font: 700 46px/1 var(--font-serif); color: var(--blue); text-align: right;
+}
+.num-card__value small { font-size: 16px; margin-left: 4px; color: var(--navy); }
+.num-card__value--sm { font-size: 22px; line-height: 1.4; }
+
+/* ---------- 事業内容 ---------- */
+.business { background: var(--bg-gray); }
+.biz-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
+.biz-card {
+  position: relative; background: #fff; padding: 40px 28px 32px;
+  border-radius: 6px; border-top: 4px solid var(--blue);
+  box-shadow: 0 4px 20px rgba(11,42,85,.06);
+  transition: transform .3s, box-shadow .3s;
+}
+.biz-card:hover { transform: translateY(-6px); box-shadow: 0 12px 32px rgba(11,42,85,.14); }
+.biz-card__icon {
+  width: 72px; height: 72px; padding: 14px; border-radius: 50%;
+  background: var(--blue-light); color: var(--blue); margin-bottom: 20px;
+}
+.biz-card__num {
+  position: absolute; top: 20px; right: 24px;
+  font: 700 40px/1 var(--font-serif); color: var(--blue-light);
+}
+.biz-card__title { font-size: 21px; color: var(--navy); margin-bottom: 12px; }
+.biz-card__text { font-size: 14px; color: var(--text-sub); margin-bottom: 20px; }
+.biz-card__tags { display: flex; flex-wrap: wrap; gap: 6px; }
+.biz-card__tags li {
+  font-size: 12px; padding: 2px 10px; border: 1px solid var(--blue);
+  color: var(--blue); border-radius: 20px;
+}
+
+/* ---------- 強み ---------- */
+.strength { background: linear-gradient(135deg, var(--navy), var(--blue)); color: #fff; }
+.strength-list { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; margin-top: 24px; }
+.strength-item {
+  padding: 40px 32px; border: 1px solid rgba(255,255,255,.25);
+  border-radius: 6px; background: rgba(255,255,255,.06);
+}
+.strength-item__num {
+  font-size: 13px; font-weight: 700; letter-spacing: .2em; color: var(--accent); margin-bottom: 12px;
+}
+.strength-item h3 { font-size: 21px; margin-bottom: 16px; line-height: 1.5; }
+.strength-item p:last-child { font-size: 15px; opacity: .9; }
+
+/* ---------- 工事の流れ ---------- */
+.flow-list { display: grid; grid-template-columns: repeat(5, 1fr); gap: 20px; counter-reset: step; }
+.flow-step {
+  position: relative; text-align: center; padding: 32px 16px;
+  background: #fff; border: 2px solid var(--line); border-radius: 6px;
+}
+.flow-step:not(:last-child)::after {
+  content: ""; position: absolute; top: 50%; right: -15px; z-index: 1;
+  border: 9px solid transparent; border-left: 10px solid var(--blue);
+  transform: translateY(-50%);
+}
+.flow-step__no {
+  display: inline-block; font-size: 12px; font-weight: 700; letter-spacing: .1em;
+  background: var(--blue); color: #fff; padding: 2px 14px; border-radius: 20px; margin-bottom: 14px;
+}
+.flow-step h3 { font-size: 18px; color: var(--navy); margin-bottom: 8px; }
+.flow-step p { font-size: 14px; color: var(--text-sub); }
+
+/* ---------- 採用 ---------- */
+.recruit {
+  padding: 100px 0; color: #fff;
+  background:
+    linear-gradient(rgba(11,42,85,.88), rgba(11,42,85,.88)),
+    repeating-linear-gradient(45deg, #1f5aa6 0 2px, transparent 2px 16px);
+}
+.recruit__inner { display: flex; align-items: center; justify-content: space-between; gap: 40px; }
+.recruit__title {
+  font-family: var(--font-serif); font-size: clamp(28px, 3.4vw, 42px);
+  line-height: 1.5; margin-bottom: 20px;
+}
+.recruit__text { opacity: .9; }
+
+/* ---------- 会社概要 ---------- */
+.company__inner { display: grid; grid-template-columns: 1.2fr 1fr; gap: 48px; align-items: start; }
+.company-table { width: 100%; border-collapse: collapse; border-top: 2px solid var(--navy); }
+.company-table th,
+.company-table td { padding: 20px 16px; border-bottom: 1px solid var(--line); text-align: left; vertical-align: top; }
+.company-table th { width: 30%; background: var(--bg-gray); color: var(--navy); font-weight: 700; white-space: nowrap; }
+.company-table a { color: var(--blue); text-decoration: underline; }
+.license-list { display: grid; grid-template-columns: repeat(2, auto); justify-content: start; gap: 2px 32px; }
+.license-list li::before { content: "■"; color: var(--blue); font-size: 10px; margin-right: 8px; vertical-align: middle; }
+.company__map { position: relative; aspect-ratio: 4 / 3; border-radius: 6px; overflow: hidden; background: var(--bg-gray); }
+.company__map iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+
+/* ---------- お問い合わせ ---------- */
+.contact { padding: 100px 0; background: var(--blue); color: #fff; text-align: center; }
+.contact__text { margin-bottom: 40px; }
+.contact__tel {
+  display: inline-flex; align-items: center; gap: 20px;
+  padding: 24px 56px; background: #fff; color: var(--navy); border-radius: 6px;
+  transition: transform .25s, box-shadow .25s;
+}
+.contact__tel:hover { transform: translateY(-3px); box-shadow: 0 10px 30px rgba(0,0,0,.2); }
+.contact__tel-label {
+  font-size: 14px; font-weight: 700; background: var(--accent);
+  padding: 4px 12px; border-radius: 4px;
+}
+.contact__tel-num { font: 700 clamp(28px, 4vw, 44px)/1 var(--font); letter-spacing: .06em; }
+
+/* ---------- フッター ---------- */
+.footer { background: #071c3a; color: #c8d3e3; padding: 64px 0 24px; font-size: 14px; }
+.footer__inner { display: flex; justify-content: space-between; gap: 40px; flex-wrap: wrap; }
+.footer__name { font-size: 20px; font-weight: 700; color: #fff; margin-bottom: 12px; }
+.footer__nav { display: grid; grid-template-columns: repeat(2, auto); gap: 8px 48px; }
+.footer__nav a:hover { color: #fff; text-decoration: underline; }
+.footer__copy {
+  margin-top: 48px; padding-top: 24px; text-align: center; font-size: 12px;
+  border-top: 1px solid rgba(255,255,255,.12);
+}
+
+.pagetop {
+  position: fixed; right: 20px; bottom: 20px; z-index: 50;
+  width: 48px; height: 48px; display: grid; place-items: center;
+  background: var(--navy); color: #fff; border-radius: 50%; font-size: 14px;
+  opacity: 0; pointer-events: none; transition: opacity .3s;
+}
+.pagetop.is-show { opacity: 1; pointer-events: auto; }
+
+/* ---------- スクロール表示アニメーション ---------- */
+.js-fade { opacity: 0; transform: translateY(30px); transition: opacity .8s, transform .8s; }
+.js-fade.is-in { opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .js-fade { opacity: 1; transform: none; transition: none; }
+  .hero__scroll::after { animation: none; }
+}
+
+/* ==========================================================
+   レスポンシブ
+   ========================================================== */
+@media (max-width: 1100px) {
+  .gnav__list { gap: 18px; }
+  .gnav__list a { font-size: 14px; }
+  .biz-grid { grid-template-columns: repeat(2, 1fr); }
+  .flow-list { grid-template-columns: repeat(3, 1fr); }
+  .flow-step::after { display: none; }
+}
+
+@media (max-width: 900px) {
+  :root { --header-h: 64px; }
+  .logo__mark { width: 40px; height: 40px; font-size: 22px; }
+  .logo__ja { font-size: 16px; }
+
+  .menu-btn { display: block; }
+  .gnav {
+    position: fixed; top: var(--header-h); left: 0; right: 0; bottom: 0;
+    flex-direction: column; align-items: stretch; gap: 0;
+    padding: 16px 24px 40px; background: #fff; overflow-y: auto;
+    transform: translateX(100%); transition: transform .35s;
+  }
+  .gnav.is-open { transform: none; }
+  .gnav__list { flex-direction: column; gap: 0; }
+  .gnav__list a { display: block; padding: 18px 4px; font-size: 16px; border-bottom: 1px solid var(--line); }
+  .gnav__list a::after { display: none; }
+  .gnav__cta { margin-top: 28px; padding: 16px; }
+
+  .section { padding: 80px 0; }
+  .about__inner,
+  .company__inner { grid-template-columns: 1fr; gap: 48px; }
+  .strength-list { grid-template-columns: 1fr; gap: 20px; }
+  .recruit__inner { flex-direction: column; align-items: flex-start; }
+  .news__inner { flex-direction: column; align-items: flex-start; gap: 12px; }
+  .news__title { border-right: 0; padding-right: 0; }
+}
+
+@media (max-width: 600px) {
+  .container, .header__inner, .hero__content { padding-left: 16px; padding-right: 16px; }
+  .sp-only { display: inline; }
+  .logo__en { display: none; }
+  .hero__btns .btn { flex: 1 1 100%; }
+  .biz-grid,
+  .flow-list { grid-template-columns: 1fr; }
+  .num-card { padding: 20px 24px; }
+  .num-card__value { font-size: 38px; }
+  .company-table th,
+  .company-table td { display: block; width: 100%; }
+  .company-table th { padding: 12px 16px; }
+  .company-table td { padding: 14px 16px 20px; }
+  .license-list { grid-template-columns: 1fr 1fr; gap: 2px 12px; }
+  .contact__tel { flex-direction: column; gap: 10px; padding: 20px 24px; width: 100%; }
+  .btn--lg { width: 100%; padding: 18px 20px; }
+}
