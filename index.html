@@ -7,13 +7,13 @@
   <meta name="description" content="株式会社上原工業は埼玉県和光市を拠点に、土木工事・管工事・水道施設工事・舗装工事などを手がける建設会社です。">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Noto+Serif+JP:wght@600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Noto+Serif+JP:wght@600;700&family=Oswald:wght@500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
   <!-- ===== ヘッダー ===== -->
-  <header class="header" id="top">
+  <header class="header" id="header">
     <div class="header__inner">
       <a href="#top" class="logo" aria-label="株式会社上原工業 トップへ">
         <span class="logo__mark" aria-hidden="true">U</span>
@@ -25,15 +25,16 @@
 
       <nav class="gnav" id="gnav" aria-label="メインメニュー">
         <ul class="gnav__list">
-          <li><a href="#about">企業情報</a></li>
-          <li><a href="#business">事業内容</a></li>
-          <li><a href="#works">施工事例</a></li>
-          <li><a href="#strength">私たちの強み</a></li>
-          <li><a href="#flow">工事の流れ</a></li>
-          <li><a href="#recruit">採用情報</a></li>
-          <li><a href="#company">会社概要</a></li>
+          <li><a href="#about"><span class="gnav__en">ABOUT</span>私たちについて</a></li>
+          <li><a href="#service"><span class="gnav__en">SERVICE</span>事業内容</a></li>
+          <li><a href="#works"><span class="gnav__en">WORKS</span>施工事例</a></li>
+          <li><a href="#recruit"><span class="gnav__en">RECRUIT</span>採用情報</a></li>
+          <li><a href="#company"><span class="gnav__en">COMPANY</span>会社概要</a></li>
         </ul>
-        <a href="#contact" class="btn btn--primary gnav__cta">お問い合わせ</a>
+        <a href="#contact" class="gnav__cta">
+          <span class="gnav__cta-label">お問い合わせ</span>
+          <span class="gnav__cta-tel">048-461-1854</span>
+        </a>
       </nav>
 
       <button class="menu-btn" id="menuBtn" aria-label="メニューを開く" aria-controls="gnav" aria-expanded="false">
@@ -42,187 +43,179 @@
     </div>
   </header>
 
-  <main>
+  <main id="top">
 
-    <!-- ===== メインビジュアル ===== -->
-    <section class="hero">
-      <div class="hero__bg" aria-hidden="true">
-        <svg viewBox="0 0 1440 600" preserveAspectRatio="xMidYMax slice">
-          <defs>
-            <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="0" stop-color="#0b2a55"/>
-              <stop offset="1" stop-color="#1f5aa6"/>
-            </linearGradient>
-          </defs>
-          <rect width="1440" height="600" fill="url(#sky)"/>
-          <!-- 遠景のビル -->
-          <g fill="#2a63ad" opacity=".55">
-            <rect x="60" y="300" width="70" height="300"/>
-            <rect x="140" y="250" width="90" height="350"/>
-            <rect x="900" y="270" width="80" height="330"/>
-            <rect x="990" y="220" width="110" height="380"/>
-            <rect x="1110" y="300" width="70" height="300"/>
-            <rect x="1300" y="260" width="100" height="340"/>
-          </g>
-          <!-- クレーン -->
-          <g stroke="#f4b400" stroke-width="6" fill="none">
-            <line x1="1220" y1="600" x2="1220" y2="150"/>
-            <line x1="1060" y1="160" x2="1400" y2="160"/>
-            <line x1="1220" y1="150" x2="1290" y2="160"/>
-            <line x1="1220" y1="150" x2="1100" y2="160"/>
-            <line x1="1150" y1="160" x2="1150" y2="260"/>
-          </g>
-          <rect x="1135" y="260" width="30" height="16" fill="#f4b400"/>
-          <!-- 道路と地面 -->
-          <path d="M0 520 Q 360 470 720 500 T 1440 480 V600 H0Z" fill="#163e75"/>
-          <path d="M0 560 Q 400 530 760 550 T 1440 540 V600 H0Z" fill="#0d2f5e"/>
-          <g stroke="#ffffff" stroke-width="5" stroke-dasharray="40 30" opacity=".5">
-            <path d="M0 578 Q 400 552 760 570 T 1440 562" fill="none"/>
-          </g>
-          <!-- 水道管 -->
-          <g opacity=".9">
-            <rect x="280" y="455" width="420" height="22" rx="11" fill="#5b9be0"/>
-            <rect x="690" y="449" width="24" height="34" rx="4" fill="#3d7fcc"/>
-            <rect x="714" y="455" width="200" height="22" rx="11" fill="#5b9be0"/>
-          </g>
-        </svg>
+    <!-- ===== メインビジュアル（スライドショー） ===== -->
+    <section class="hero" aria-label="メインビジュアル">
+      <div class="hero__slides" id="heroSlides" aria-hidden="true">
+        <div class="hero__slide is-active" style="background-image:url(images/photo-site.jpg)"></div>
+        <div class="hero__slide" style="background-image:url(images/photo-paving.jpg)"></div>
+        <div class="hero__slide" style="background-image:url(images/photo-sewer-pipe.jpg)"></div>
+        <div class="hero__slide" style="background-image:url(images/photo-pipe-wrench.jpg)"></div>
       </div>
 
       <div class="hero__content">
-        <p class="hero__lead">埼玉県和光市から、まちの基盤をつくる。</p>
+        <p class="hero__en">BUILDING THE FOUNDATION OF<br>EVERYDAY LIFE.</p>
         <h1 class="hero__title">
-          地図に残る仕事を、<br>
-          <span>暮らしの<br class="sp-only">足もとから。</span>
+          まちの足もとを、<br>
+          確かな技術で支える。
         </h1>
-        <p class="hero__text">
-          道路・上下水道・造成工事など、<br class="sp-only">
-          人々の暮らしを支える土木の仕事を<br class="sp-only">
-          確かな技術でお届けします。
-        </p>
-        <div class="hero__btns">
-          <a href="#business" class="btn btn--white">事業内容を見る</a>
-          <a href="#contact" class="btn btn--accent">お問い合わせ</a>
-        </div>
+        <p class="hero__text">埼玉県和光市から、道路・上下水道・造成工事を。</p>
       </div>
 
-      <a href="#about" class="hero__scroll" aria-label="下へスクロール">SCROLL</a>
-    </section>
-
-    <!-- ===== お知らせ ===== -->
-    <section class="news">
-      <div class="container news__inner">
-        <h2 class="news__title">お知らせ</h2>
-        <ul class="news__list">
-          <li>
-            <time datetime="2026-10-13">2026.10.13</time>
-            <span class="tag">お知らせ</span>
-            <a href="#top">ホームページを開設しました。</a>
-          </li>
-        </ul>
+      <div class="hero__counter" aria-hidden="true">
+        <span id="heroCurrent">01</span>
+        <span class="hero__counter-bar"><span id="heroBar"></span></span>
+        <span>04</span>
       </div>
+
+      <a href="#about" class="hero__scroll">SCROLL</a>
     </section>
 
-    <!-- ===== 企業情報（メッセージ） ===== -->
-    <section class="section about" id="about">
+    <!-- ===== 私たちについて ===== -->
+    <section class="about" id="about">
+      <p class="bg-text" aria-hidden="true">UEHARA KOGYO</p>
       <div class="container about__inner">
         <div class="about__text">
-          <p class="section__en">ABOUT US</p>
-          <h2 class="section__title">安全・確実・誠実に。<br>地域のインフラを守り続けます。</h2>
+          <h2 class="heading">
+            <span class="heading__en">ABOUT US</span>
+            <span class="heading__ja">私たちについて</span>
+          </h2>
+          <p class="about__catch">見えないところにこそ、<br>誠実な仕事を。</p>
           <p>
-            株式会社上原工業は、埼玉県和光市を拠点とする建設会社です。
-            土木工事をはじめ、上下水道などの管工事、舗装工事、鋼構造物工事まで、
-            地域の暮らしに欠かせないインフラ整備に携わってきました。
+            株式会社上原工業は、1979年の設立以来、埼玉県和光市を拠点に
+            土木工事・上下水道工事・舗装工事など、地域の暮らしに欠かせない
+            インフラ整備に携わってきました。
           </p>
           <p>
             私たちの仕事は、完成すると地面の下に隠れてしまうものも少なくありません。
             だからこそ、見えないところまで手を抜かない「確かな施工」を大切にしています。
             これからも安全第一で、地域の皆さまに信頼される会社であり続けます。
           </p>
-          <p class="about__sign">代表取締役　上原 哲也</p>
+          <p class="about__sign">代表取締役　<span>上原 哲也</span></p>
         </div>
+        <div class="about__photo">
+          <img src="images/photo-site.jpg" alt="造成工事が進む住宅地の現場" width="700" height="467" loading="lazy">
+        </div>
+      </div>
 
-        <div class="about__numbers">
-          <div class="num-card">
-            <p class="num-card__label">設立</p>
-            <p class="num-card__value">1979<small>年</small></p>
-          </div>
-          <div class="num-card">
-            <p class="num-card__label">建設業許可</p>
-            <p class="num-card__value">8<small>業種</small></p>
-          </div>
-          <div class="num-card">
-            <p class="num-card__label">従業員数</p>
-            <p class="num-card__value">6<small>名</small></p>
-          </div>
-        </div>
+      <div class="container">
+        <ul class="numbers">
+          <li>
+            <p class="numbers__label">設立</p>
+            <p class="numbers__value">1979<small>年</small></p>
+          </li>
+          <li>
+            <p class="numbers__label">従業員数</p>
+            <p class="numbers__value">6<small>名</small></p>
+          </li>
+          <li>
+            <p class="numbers__label">建設業許可</p>
+            <p class="numbers__value">8<small>業種</small></p>
+          </li>
+        </ul>
       </div>
     </section>
 
     <!-- ===== 事業内容 ===== -->
-    <section class="section business" id="business">
+    <section class="service" id="service">
       <div class="container">
-        <p class="section__en section__en--center">BUSINESS</p>
-        <h2 class="section__title section__title--center">事業内容</h2>
-        <p class="section__desc">まちづくりの基礎となる、4つの分野で地域に貢献しています。</p>
+        <h2 class="heading heading--center">
+          <span class="heading__en">SERVICE</span>
+          <span class="heading__ja">事業内容</span>
+        </h2>
+      </div>
 
-        <div class="biz-grid">
-          <article class="biz-card">
-            <div class="biz-card__icon" aria-hidden="true">
-              <svg viewBox="0 0 64 64"><path d="M6 50h52M10 50l8-18h14l6 8h14l4 10" fill="none" stroke="currentColor" stroke-width="3" stroke-linejoin="round"/><circle cx="20" cy="50" r="5" fill="currentColor"/><circle cx="46" cy="50" r="5" fill="currentColor"/><path d="M32 32l10-16 8 4-6 10" fill="none" stroke="currentColor" stroke-width="3"/></svg>
-            </div>
-            <p class="biz-card__num">01</p>
-            <h3 class="biz-card__title">土木工事</h3>
-            <p class="biz-card__text">宅地造成・掘削・埋戻しなど、あらゆる建設の土台となる工事を行います。</p>
-            <ul class="biz-card__tags">
-              <li>土木工事</li><li>とび・土工工事</li><li>しゅんせつ工事</li>
-            </ul>
-          </article>
+      <div class="service-list">
+        <article class="service-item">
+          <div class="service-item__photo">
+            <img src="images/photo-site.jpg" alt="重機が稼働する造成工事の現場" width="700" height="467" loading="lazy">
+          </div>
+          <div class="service-item__body">
+            <p class="service-item__num">01</p>
+            <p class="service-item__en">CIVIL ENGINEERING</p>
+            <h3 class="service-item__title">土木・造成工事</h3>
+            <p>宅地造成・掘削・埋戻しなど、あらゆる建設の土台となる工事を行います。地盤を整え、安全で長く使える土地をつくります。</p>
+            <ul class="tags"><li>土木工事</li><li>とび・土工工事</li><li>しゅんせつ工事</li><li>鋼構造物工事</li></ul>
+          </div>
+        </article>
 
-          <article class="biz-card">
-            <div class="biz-card__icon" aria-hidden="true">
-              <svg viewBox="0 0 64 64"><rect x="4" y="26" width="24" height="12" rx="3" fill="none" stroke="currentColor" stroke-width="3"/><rect x="36" y="26" width="24" height="12" rx="3" fill="none" stroke="currentColor" stroke-width="3"/><rect x="27" y="22" width="10" height="20" rx="2" fill="currentColor"/><path d="M48 44c0 4-3 7-3 9a3 3 0 006 0c0-2-3-5-3-9z" fill="currentColor"/></svg>
-            </div>
-            <p class="biz-card__num">02</p>
-            <h3 class="biz-card__title">上下水道工事</h3>
-            <p class="biz-card__text">給排水管の敷設・更新から給湯器・浄化槽の設置まで、毎日の暮らしに欠かせない水まわりを整備します。</p>
-            <ul class="biz-card__tags">
-              <li>管工事</li><li>水道施設工事</li>
-            </ul>
-          </article>
+        <article class="service-item service-item--reverse">
+          <div class="service-item__photo">
+            <img src="images/photo-sewer-pipe.jpg" alt="地中で塩ビ管を接続する作業" width="700" height="467" loading="lazy">
+          </div>
+          <div class="service-item__body">
+            <p class="service-item__num">02</p>
+            <p class="service-item__en">WATER &amp; SEWERAGE</p>
+            <h3 class="service-item__title">上下水道工事</h3>
+            <p>道路下の上水道・下水道管の敷設や更新を行います。毎日当たり前に使う「水」を、確実に届け、流すための工事です。</p>
+            <ul class="tags"><li>水道施設工事</li><li>管工事</li></ul>
+          </div>
+        </article>
 
-          <article class="biz-card">
-            <div class="biz-card__icon" aria-hidden="true">
-              <svg viewBox="0 0 64 64"><path d="M24 8L8 56h48L40 8z" fill="none" stroke="currentColor" stroke-width="3" stroke-linejoin="round"/><path d="M32 14v8M32 30v8M32 46v8" stroke="currentColor" stroke-width="4"/></svg>
-            </div>
-            <p class="biz-card__num">03</p>
-            <h3 class="biz-card__title">舗装・外構工事</h3>
-            <p class="biz-card__text">道路や駐車場のアスファルト舗装、石積み・縁石などの外構工事を行います。</p>
-            <ul class="biz-card__tags">
-              <li>舗装工事</li><li>石工事</li>
-            </ul>
-          </article>
+        <article class="service-item">
+          <div class="service-item__photo">
+            <img src="images/photo-paving.jpg" alt="プレートコンパクターでアスファルトを締め固める作業" width="700" height="467" loading="lazy">
+          </div>
+          <div class="service-item__body">
+            <p class="service-item__num">03</p>
+            <p class="service-item__en">PAVING</p>
+            <h3 class="service-item__title">舗装・外構工事</h3>
+            <p>道路や駐車場のアスファルト舗装、掘削後の舗装復旧、縁石・石積みなどの外構工事まで丁寧に仕上げます。</p>
+            <ul class="tags"><li>舗装工事</li><li>石工事</li></ul>
+          </div>
+        </article>
 
-          <article class="biz-card">
-            <div class="biz-card__icon" aria-hidden="true">
-              <svg viewBox="0 0 64 64"><path d="M8 54h48M14 54V22h36v32M14 22l18-12 18 12M14 22l36 32M50 22L14 54M32 22v32" fill="none" stroke="currentColor" stroke-width="3" stroke-linejoin="round"/></svg>
-            </div>
-            <p class="biz-card__num">04</p>
-            <h3 class="biz-card__title">鋼構造物工事</h3>
-            <p class="biz-card__text">鉄骨・鋼製の構造物の組立てや設置など、強度が求められる工事に対応します。</p>
-            <ul class="biz-card__tags">
-              <li>鋼構造物工事</li>
-            </ul>
-          </article>
+        <article class="service-item service-item--reverse">
+          <div class="service-item__photo">
+            <img src="images/photo-pipe-wrench.jpg" alt="パイプレンチで給水管を締める作業" width="700" height="467" loading="lazy">
+          </div>
+          <div class="service-item__body">
+            <p class="service-item__num">04</p>
+            <p class="service-item__en">PLUMBING</p>
+            <h3 class="service-item__title">給排水・設備工事</h3>
+            <p>宅地内の給水・排水管工事から、給湯器や浄化槽の設置まで。暮らしに身近な水まわりの工事にも対応します。</p>
+            <ul class="tags"><li>管工事</li><li>給湯器設置</li><li>浄化槽設置</li></ul>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ===== 強み ===== -->
+    <section class="strength">
+      <div class="container">
+        <h2 class="heading heading--center heading--light">
+          <span class="heading__en">STRENGTH</span>
+          <span class="heading__ja">上原工業の強み</span>
+        </h2>
+        <div class="strength-list">
+          <div class="strength-item">
+            <p class="strength-item__num">01</p>
+            <h3>幅広い工事に<br>一社で対応</h3>
+            <p>8業種の建設業許可を保有。掘削から配管、舗装の復旧まで一貫して任せていただけます。</p>
+          </div>
+          <div class="strength-item">
+            <p class="strength-item__num">02</p>
+            <h3>地域に根ざした<br>フットワーク</h3>
+            <p>和光市を拠点に、地元をよく知るからこそ、迅速できめ細かな対応が可能です。</p>
+          </div>
+          <div class="strength-item">
+            <p class="strength-item__num">03</p>
+            <h3>安全を最優先にした<br>現場づくり</h3>
+            <p>作業員はもちろん、近隣の方や通行される方の安全にも配慮した現場を徹底しています。</p>
+          </div>
         </div>
       </div>
     </section>
 
     <!-- ===== 施工事例 ===== -->
-    <section class="section works" id="works">
+    <section class="works" id="works">
       <div class="container">
-        <p class="section__en section__en--center">WORKS</p>
-        <h2 class="section__title section__title--center">施工事例</h2>
-        <p class="section__desc">これまでに手がけた工事の一部をご紹介します。</p>
+        <h2 class="heading heading--center">
+          <span class="heading__en">WORKS</span>
+          <span class="heading__ja">施工事例</span>
+        </h2>
+        <p class="lead">これまでに手がけた工事の一部をご紹介します。</p>
 
         <div class="works-grid">
           <figure class="work-card">
@@ -261,90 +254,48 @@
       </div>
     </section>
 
-    <!-- ===== 強み ===== -->
-    <section class="section strength" id="strength">
-      <div class="container">
-        <p class="section__en section__en--center section__en--light">STRENGTH</p>
-        <h2 class="section__title section__title--center section__title--light">上原工業の強み</h2>
-
-        <div class="strength-list">
-          <div class="strength-item">
-            <p class="strength-item__num">POINT 01</p>
-            <h3>幅広い工事に一社で対応</h3>
-            <p>土木・管・舗装・鋼構造物など8業種の建設業許可を保有。掘削から配管、舗装の復旧まで一貫して任せていただけます。</p>
-          </div>
-          <div class="strength-item">
-            <p class="strength-item__num">POINT 02</p>
-            <h3>地域に根ざしたフットワーク</h3>
-            <p>和光市を拠点に、地元の地形や環境をよく知るからこそ、迅速できめ細かな対応が可能です。</p>
-          </div>
-          <div class="strength-item">
-            <p class="strength-item__num">POINT 03</p>
-            <h3>安全を最優先にした現場づくり</h3>
-            <p>作業員はもちろん、近隣の方や通行される方の安全にも配慮し、事故のない現場を徹底しています。</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
     <!-- ===== 工事の流れ ===== -->
-    <section class="section flow" id="flow">
+    <section class="flow">
       <div class="container">
-        <p class="section__en section__en--center">FLOW</p>
-        <h2 class="section__title section__title--center">ご依頼から完成まで</h2>
-        <p class="section__desc">はじめての方でも安心してご依頼いただけるよう、丁寧にご説明します。</p>
-
+        <h2 class="heading heading--center">
+          <span class="heading__en">FLOW</span>
+          <span class="heading__ja">ご依頼から完成まで</span>
+        </h2>
         <ol class="flow-list">
-          <li class="flow-step">
-            <span class="flow-step__no">STEP 1</span>
-            <h3>お問い合わせ</h3>
-            <p>お電話にてお気軽にご相談ください。</p>
-          </li>
-          <li class="flow-step">
-            <span class="flow-step__no">STEP 2</span>
-            <h3>現地調査</h3>
-            <p>現場を確認し、ご要望を詳しくお伺いします。</p>
-          </li>
-          <li class="flow-step">
-            <span class="flow-step__no">STEP 3</span>
-            <h3>お見積り・ご契約</h3>
-            <p>工事内容と費用をわかりやすくご提示します。</p>
-          </li>
-          <li class="flow-step">
-            <span class="flow-step__no">STEP 4</span>
-            <h3>施工</h3>
-            <p>安全管理を徹底し、確実に施工します。</p>
-          </li>
-          <li class="flow-step">
-            <span class="flow-step__no">STEP 5</span>
-            <h3>完成・お引き渡し</h3>
-            <p>仕上がりをご確認いただき、お引き渡しします。</p>
-          </li>
+          <li class="flow-step"><span class="flow-step__no">01</span><h3>お問い合わせ</h3><p>お電話にてお気軽にご相談ください。</p></li>
+          <li class="flow-step"><span class="flow-step__no">02</span><h3>現地調査</h3><p>現場を確認し、ご要望を詳しくお伺いします。</p></li>
+          <li class="flow-step"><span class="flow-step__no">03</span><h3>お見積り・ご契約</h3><p>工事内容と費用をわかりやすくご提示します。</p></li>
+          <li class="flow-step"><span class="flow-step__no">04</span><h3>施工</h3><p>安全管理を徹底し、確実に施工します。</p></li>
+          <li class="flow-step"><span class="flow-step__no">05</span><h3>完成・お引き渡し</h3><p>仕上がりをご確認いただき、お引き渡しします。</p></li>
         </ol>
       </div>
     </section>
 
     <!-- ===== 採用情報 ===== -->
     <section class="recruit" id="recruit">
+      <div class="recruit__bg" aria-hidden="true"></div>
       <div class="container recruit__inner">
-        <div>
-          <p class="section__en section__en--light">RECRUIT</p>
-          <h2 class="recruit__title">まちの未来を、<br>一緒につくりませんか。</h2>
-          <p class="recruit__text">
-            上原工業では、共に働く仲間を募集しています。<br>
-            経験の有無は問いません。現場で一から技術を身につけられます。<br>
-            募集職種・条件については、お電話にてお問い合わせください。
-          </p>
-        </div>
-        <a href="tel:0484611854" class="btn btn--accent btn--lg">採用について問い合わせる</a>
+        <h2 class="heading heading--light">
+          <span class="heading__en">RECRUIT</span>
+          <span class="heading__ja">採用情報</span>
+        </h2>
+        <p class="recruit__catch">まちの未来を、<br>一緒につくりませんか。</p>
+        <p class="recruit__text">
+          上原工業では、共に働く仲間を募集しています。<br>
+          経験の有無は問いません。現場で一から技術を身につけられます。<br>
+          募集職種・条件については、お電話にてお問い合わせください。
+        </p>
+        <a href="tel:0484611854" class="btn btn--accent">採用について問い合わせる</a>
       </div>
     </section>
 
     <!-- ===== 会社概要 ===== -->
-    <section class="section company" id="company">
+    <section class="company" id="company">
       <div class="container">
-        <p class="section__en section__en--center">COMPANY</p>
-        <h2 class="section__title section__title--center">会社概要</h2>
+        <h2 class="heading heading--center">
+          <span class="heading__en">COMPANY</span>
+          <span class="heading__ja">会社概要</span>
+        </h2>
 
         <div class="company__inner">
           <table class="company-table">
@@ -390,10 +341,11 @@
     <!-- ===== お問い合わせ ===== -->
     <section class="contact" id="contact">
       <div class="container">
-        <p class="section__en section__en--center section__en--light">CONTACT</p>
-        <h2 class="section__title section__title--center section__title--light">お問い合わせ</h2>
-        <p class="contact__text">工事のご依頼・ご相談、採用に関するお問い合わせはお電話にてお気軽にどうぞ。</p>
-
+        <h2 class="heading heading--center heading--light">
+          <span class="heading__en">CONTACT</span>
+          <span class="heading__ja">お問い合わせ</span>
+        </h2>
+        <p class="contact__text">工事のご依頼・ご相談、採用に関するお問い合わせは<br class="pc-only">お電話にてお気軽にどうぞ。</p>
         <a href="tel:0484611854" class="contact__tel">
           <span class="contact__tel-label">TEL</span>
           <span class="contact__tel-num">048-461-1854</span>
@@ -411,11 +363,9 @@
         <p class="footer__addr">〒351-0115 埼玉県和光市新倉2丁目31-5<br>TEL 048-461-1854</p>
       </div>
       <ul class="footer__nav">
-        <li><a href="#about">企業情報</a></li>
-        <li><a href="#business">事業内容</a></li>
+        <li><a href="#about">私たちについて</a></li>
+        <li><a href="#service">事業内容</a></li>
         <li><a href="#works">施工事例</a></li>
-        <li><a href="#strength">私たちの強み</a></li>
-        <li><a href="#flow">工事の流れ</a></li>
         <li><a href="#recruit">採用情報</a></li>
         <li><a href="#company">会社概要</a></li>
         <li><a href="#contact">お問い合わせ</a></li>
@@ -424,7 +374,7 @@
     <p class="footer__copy">&copy; UEHARA KOGYO CO., LTD. All Rights Reserved.</p>
   </footer>
 
-  <a href="#top" class="pagetop" id="pagetop" aria-label="ページの先頭へ">▲</a>
+  <a href="#top" class="pagetop" id="pagetop" aria-label="ページの先頭へ"></a>
 
   <script src="js/main.js"></script>
 </body>

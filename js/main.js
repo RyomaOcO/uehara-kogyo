@@ -1,10 +1,15 @@
 (function () {
+  var header = document.getElementById('header');
+  var pagetop = document.getElementById('pagetop');
+  var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
   // スマホ用メニューの開閉
   var menuBtn = document.getElementById('menuBtn');
   var gnav = document.getElementById('gnav');
 
   function setMenu(open) {
     gnav.classList.toggle('is-open', open);
+    header.classList.toggle('is-menu-open', open);
     menuBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
     menuBtn.setAttribute('aria-label', open ? 'メニューを閉じる' : 'メニューを開く');
     document.body.style.overflow = open ? 'hidden' : '';
@@ -18,17 +23,42 @@
     link.addEventListener('click', function () { setMenu(false); });
   });
 
-  // ページ上部へ戻るボタン
-  var pagetop = document.getElementById('pagetop');
-  window.addEventListener('scroll', function () {
+  // スクロールでヘッダーを白背景に・ページトップボタンを表示
+  function onScroll() {
+    header.classList.toggle('is-scrolled', window.scrollY > 40);
     pagetop.classList.toggle('is-show', window.scrollY > 600);
-  }, { passive: true });
+  }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+
+  // メインビジュアルのスライドショー
+  var slides = document.querySelectorAll('#heroSlides .hero__slide');
+  var current = document.getElementById('heroCurrent');
+  var bar = document.getElementById('heroBar');
+  var index = 0;
+
+  function runBar() {
+    bar.classList.remove('is-run');
+    void bar.offsetWidth; // アニメーションを最初からやり直す
+    bar.classList.add('is-run');
+  }
+
+  if (slides.length > 1) {
+    runBar();
+    setInterval(function () {
+      slides[index].classList.remove('is-active');
+      index = (index + 1) % slides.length;
+      slides[index].classList.add('is-active');
+      current.textContent = ('0' + (index + 1)).slice(-2);
+      runBar();
+    }, 6000);
+  }
 
   // スクロールで要素をふわっと表示
-  if (!('IntersectionObserver' in window)) return;
+  if (reduceMotion || !('IntersectionObserver' in window)) return;
 
   var targets = document.querySelectorAll(
-    '.section__title, .section__desc, .about__text, .num-card, .biz-card, .work-card, .strength-item, .flow-step, .recruit__inner, .company__inner'
+    '.heading, .lead, .about__text, .about__photo, .numbers li, .service-item, .strength-item, .work-card, .flow-step, .recruit__inner, .company__inner, .contact__tel'
   );
   var observer = new IntersectionObserver(function (entries) {
     entries.forEach(function (entry) {
