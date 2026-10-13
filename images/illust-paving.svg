@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400">
+  <title>舗装工事：ローラーで舗装する様子と道路の層構造</title>
+  <style>.steam{animation:s 3s ease-in-out infinite}@keyframes s{0%,100%{opacity:.2;transform:translateY(4px)}50%{opacity:.8;transform:translateY(-4px)}}@media (prefers-reduced-motion:reduce){.steam{animation:none}}</style>
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#dcebfa"/><stop offset="1" stop-color="#f6f9fd"/></linearGradient>
+    <linearGradient id="soil" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#e8cfa5"/><stop offset="1" stop-color="#d2ad7c"/></linearGradient>
+    <pattern id="dots" width="34" height="26" patternUnits="userSpaceOnUse"><circle cx="6" cy="6" r="2.2" fill="#c49a6c" opacity=".55"/><circle cx="23" cy="18" r="1.6" fill="#b88b5c" opacity=".5"/></pattern>
+    <pattern id="gravel" width="18" height="12" patternUnits="userSpaceOnUse"><circle cx="4" cy="4" r="2" fill="#7d8792"/><circle cx="13" cy="9" r="1.6" fill="#6c7681"/></pattern>
+    <g id="worker">
+      <rect x="-9" y="52" width="8" height="30" rx="3" fill="#13305c"/><rect x="1" y="52" width="8" height="30" rx="3" fill="#13305c"/>
+      <rect x="-11" y="78" width="11" height="6" rx="2" fill="#2a2f38"/><rect x="0" y="78" width="11" height="6" rx="2" fill="#2a2f38"/>
+      <rect x="-13" y="22" width="26" height="34" rx="7" fill="#1f5aa6"/><rect x="-13" y="38" width="26" height="4" fill="#f4b400"/>
+      <circle cx="0" cy="12" r="9" fill="#f2c9a0"/><path d="M-11 10a11 11 0 0 1 22 0z" fill="#f4b400"/><rect x="-13" y="8" width="26" height="3.5" rx="1.5" fill="#f4b400"/>
+    </g>
+    <g id="cone"><path d="M-10 0 L-3 -30 L3 -30 L10 0z" fill="#f08a24"/><path d="M-7 -12 L7 -12 L5.6 -18 L-5.6 -18z" fill="#fff"/><rect x="-13" y="-3" width="26" height="4" rx="1" fill="#3a3f48"/></g>
+    <g id="tree"><rect x="-4" y="-30" width="8" height="30" fill="#8a6a4a"/><circle cx="0" cy="-52" r="28" fill="#8fc3a0"/><circle cx="-14" cy="-40" r="18" fill="#7bb592"/></g>
+  </defs>
+  <rect width="600" height="200" fill="url(#sky)"/>
+  <g fill="#c9dcf2"><rect x="380" y="90" width="60" height="110"/><rect x="450" y="60" width="44" height="140"/><rect x="505" y="110" width="70" height="90"/></g>
+  <use href="#tree" x="40" y="200"/>
+  <!-- 層 -->
+  <rect y="200" width="600" height="34" fill="#2f3846"/>
+  <rect y="234" width="600" height="34" fill="#4a5466"/>
+  <rect y="268" width="600" height="50" fill="#9aa3ad"/><rect y="268" width="600" height="50" fill="url(#gravel)" opacity=".7"/>
+  <rect y="318" width="600" height="82" fill="url(#soil)"/><rect y="318" width="600" height="82" fill="url(#dots)"/>
+  <rect x="0" y="196" width="330" height="6" fill="#444e5e"/>
+  <g font-family="sans-serif" font-size="13" font-weight="700" text-anchor="middle">
+    <rect x="474" y="206" width="84" height="22" rx="11" fill="#fff"/><text x="516" y="222" fill="#0b2a55">表層</text>
+    <rect x="474" y="240" width="84" height="22" rx="11" fill="#fff"/><text x="516" y="256" fill="#0b2a55">基層</text>
+    <rect x="474" y="282" width="84" height="22" rx="11" fill="#fff"/><text x="516" y="298" fill="#0b2a55">路盤</text>
+    <rect x="474" y="348" width="84" height="22" rx="11" fill="#fff"/><text x="516" y="364" fill="#0b2a55">路床</text>
+  </g>
+  <!-- ローラー -->
+  <g>
+    <rect x="200" y="150" width="140" height="26" rx="5" fill="#f4b400"/>
+    <path d="M232 150v-46h70v46z" fill="#f4b400"/><path d="M240 146v-34h54v34z" fill="#bfe0ff"/>
+    <rect x="226" y="98" width="82" height="8" rx="3" fill="#0b2a55"/>
+    <circle cx="210" cy="176" r="24" fill="#6b7480"/><circle cx="210" cy="176" r="12" fill="#3a3f48"/>
+    <circle cx="330" cy="176" r="24" fill="#6b7480"/><circle cx="330" cy="176" r="12" fill="#3a3f48"/>
+  </g>
+  <g class="steam" stroke="#fff" stroke-width="4" fill="none" stroke-linecap="round" opacity=".7">
+    <path d="M380 190 q-8 -12 0 -24 t0 -24"/><path d="M410 190 q-8 -12 0 -24 t0 -24"/><path d="M440 190 q-8 -12 0 -24 t0 -24"/>
+  </g>
+  <!-- レーキを持つ作業員 -->
+  <g transform="translate(110 114)"><use href="#worker"/></g>
+  <path d="M122 140 L160 196" stroke="#8a6a4a" stroke-width="4" stroke-linecap="round"/>
+  <rect x="150" y="192" width="24" height="5" fill="#3a3f48"/>
+</svg>

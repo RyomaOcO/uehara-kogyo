@@ -31,29 +31,6 @@
   window.addEventListener('scroll', onScroll, { passive: true });
   onScroll();
 
-  // メインビジュアルのスライドショー
-  var slides = document.querySelectorAll('#heroSlides .hero__slide');
-  var current = document.getElementById('heroCurrent');
-  var bar = document.getElementById('heroBar');
-  var index = 0;
-
-  function runBar() {
-    bar.classList.remove('is-run');
-    void bar.offsetWidth; // アニメーションを最初からやり直す
-    bar.classList.add('is-run');
-  }
-
-  if (slides.length > 1) {
-    runBar();
-    setInterval(function () {
-      slides[index].classList.remove('is-active');
-      index = (index + 1) % slides.length;
-      slides[index].classList.add('is-active');
-      current.textContent = ('0' + (index + 1)).slice(-2);
-      runBar();
-    }, 6000);
-  }
-
   // スクロールで要素をふわっと表示
   if (reduceMotion || !('IntersectionObserver' in window)) return;
 

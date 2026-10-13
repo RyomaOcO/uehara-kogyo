@@ -47,26 +47,14 @@
 
     <!-- ===== メインビジュアル（スライドショー） ===== -->
     <section class="hero" aria-label="メインビジュアル">
-      <div class="hero__slides" id="heroSlides" aria-hidden="true">
-        <div class="hero__slide is-active" style="background-image:url(images/photo-site.jpg)"></div>
-        <div class="hero__slide" style="background-image:url(images/photo-paving.jpg)"></div>
-        <div class="hero__slide" style="background-image:url(images/photo-sewer-pipe.jpg)"></div>
-        <div class="hero__slide" style="background-image:url(images/photo-pipe-wrench.jpg)"></div>
-      </div>
-
+      <img class="hero__illust" src="images/illust-hero.svg" alt="" width="1440" height="900">
       <div class="hero__content">
         <p class="hero__en">BUILDING THE FOUNDATION OF<br>EVERYDAY LIFE.</p>
         <h1 class="hero__title">
           まちの足もとを、<br>
           確かな技術で支える。
         </h1>
-        <p class="hero__text">埼玉県和光市から、道路・上下水道・造成工事を。</p>
-      </div>
-
-      <div class="hero__counter" aria-hidden="true">
-        <span id="heroCurrent">01</span>
-        <span class="hero__counter-bar"><span id="heroBar"></span></span>
-        <span>04</span>
+        <p class="hero__text">埼玉県和光市の土木・上下水道工事</p>
       </div>
 
       <a href="#about" class="hero__scroll">SCROLL</a>
@@ -95,7 +83,7 @@
           <p class="about__sign">代表取締役　<span>上原 哲也</span></p>
         </div>
         <div class="about__photo">
-          <img src="images/photo-site.jpg" alt="造成工事が進む住宅地の現場" width="700" height="467" loading="lazy">
+          <img src="images/illust-about.svg" alt="上原工業の事務所と社員のイラスト" width="600" height="400" loading="lazy">
         </div>
       </div>
 
@@ -129,7 +117,7 @@
       <div class="service-list">
         <article class="service-item">
           <div class="service-item__photo">
-            <img src="images/photo-site.jpg" alt="重機が稼働する造成工事の現場" width="700" height="467" loading="lazy">
+            <img src="images/illust-civil.svg" alt="ショベルカーがダンプに土を積み込む造成工事のイラスト" width="600" height="400" loading="lazy">
           </div>
           <div class="service-item__body">
             <p class="service-item__num">01</p>
@@ -142,7 +130,7 @@
 
         <article class="service-item service-item--reverse">
           <div class="service-item__photo">
-            <img src="images/photo-sewer-pipe.jpg" alt="地中で塩ビ管を接続する作業" width="700" height="467" loading="lazy">
+            <img src="images/illust-water.svg" alt="道路を掘削して水道管を接続する断面のイラスト" width="600" height="400" loading="lazy">
           </div>
           <div class="service-item__body">
             <p class="service-item__num">02</p>
@@ -155,7 +143,7 @@
 
         <article class="service-item">
           <div class="service-item__photo">
-            <img src="images/photo-paving.jpg" alt="プレートコンパクターでアスファルトを締め固める作業" width="700" height="467" loading="lazy">
+            <img src="images/illust-paving.svg" alt="ローラーで舗装する様子と道路の層構造のイラスト" width="600" height="400" loading="lazy">
           </div>
           <div class="service-item__body">
             <p class="service-item__num">03</p>
@@ -168,7 +156,7 @@
 
         <article class="service-item service-item--reverse">
           <div class="service-item__photo">
-            <img src="images/photo-pipe-wrench.jpg" alt="パイプレンチで給水管を締める作業" width="700" height="467" loading="lazy">
+            <img src="images/illust-plumbing.svg" alt="住宅の給湯器と地中の浄化槽をつなぐ配管のイラスト" width="600" height="400" loading="lazy">
           </div>
           <div class="service-item__body">
             <p class="service-item__num">04</p>
@@ -273,8 +261,8 @@
 
     <!-- ===== 採用情報 ===== -->
     <section class="recruit" id="recruit">
-      <div class="recruit__bg" aria-hidden="true"></div>
       <div class="container recruit__inner">
+        <div class="recruit__body">
         <h2 class="heading heading--light">
           <span class="heading__en">RECRUIT</span>
           <span class="heading__ja">採用情報</span>
@@ -286,6 +274,8 @@
           募集職種・条件については、お電話にてお問い合わせください。
         </p>
         <a href="tel:0484611854" class="btn btn--accent">採用について問い合わせる</a>
+        </div>
+        <img class="recruit__illust" src="images/illust-recruit.svg" alt="" width="600" height="400" loading="lazy">
       </div>
     </section>
 

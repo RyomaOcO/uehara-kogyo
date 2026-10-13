@@ -1,0 +1,189 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMax slice">
+  <title>まちの断面図：地上の家並みと工事現場、地下を通る水道管と下水管</title>
+  <style>
+    .flow-w { stroke-dasharray: 14 22; animation: flow 1.6s linear infinite; }
+    .flow-s { stroke-dasharray: 22 30; animation: flow 2.8s linear infinite; }
+    .car { animation: drive 22s linear infinite; }
+    .cloud { animation: drift 60s linear infinite; }
+    .arm { transform-origin: 1035px 470px; animation: dig 5s ease-in-out infinite; }
+    @keyframes flow { to { stroke-dashoffset: -72; } }
+    @keyframes drive { from { transform: translateX(-260px); } to { transform: translateX(1500px); } }
+    @keyframes drift { from { transform: translateX(-200px); } to { transform: translateX(1600px); } }
+    @keyframes dig { 0%,100% { transform: rotate(0deg); } 50% { transform: rotate(-6deg); } }
+    @media (prefers-reduced-motion: reduce) { * { animation: none !important; } }
+  </style>
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#dcebfa"/>
+      <stop offset="1" stop-color="#f6f9fd"/>
+    </linearGradient>
+    <linearGradient id="soil" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#e8cfa5"/>
+      <stop offset="1" stop-color="#d2ad7c"/>
+    </linearGradient>
+    <pattern id="dots" width="34" height="26" patternUnits="userSpaceOnUse">
+      <circle cx="6" cy="6" r="2.2" fill="#c49a6c" opacity=".55"/>
+      <circle cx="23" cy="18" r="1.6" fill="#b88b5c" opacity=".5"/>
+    </pattern>
+    <pattern id="gravel" width="18" height="12" patternUnits="userSpaceOnUse">
+      <circle cx="4" cy="4" r="2" fill="#7d8792"/>
+      <circle cx="13" cy="9" r="1.6" fill="#6c7681"/>
+    </pattern>
+    <g id="worker">
+      <rect x="-9" y="52" width="8" height="30" rx="3" fill="#13305c"/>
+      <rect x="1" y="52" width="8" height="30" rx="3" fill="#13305c"/>
+      <rect x="-11" y="78" width="11" height="6" rx="2" fill="#2a2f38"/>
+      <rect x="0" y="78" width="11" height="6" rx="2" fill="#2a2f38"/>
+      <rect x="-13" y="22" width="26" height="34" rx="7" fill="#1f5aa6"/>
+      <rect x="-13" y="38" width="26" height="4" fill="#f4b400"/>
+      <circle cx="0" cy="12" r="9" fill="#f2c9a0"/>
+      <path d="M-11 10a11 11 0 0 1 22 0z" fill="#f4b400"/>
+      <rect x="-13" y="8" width="26" height="3.5" rx="1.5" fill="#f4b400"/>
+    </g>
+    <g id="cone">
+      <path d="M-10 0 L-3 -30 L3 -30 L10 0z" fill="#f08a24"/>
+      <path d="M-7 -12 L7 -12 L5.6 -18 L-5.6 -18z" fill="#fff"/>
+      <rect x="-13" y="-3" width="26" height="4" rx="1" fill="#3a3f48"/>
+    </g>
+    <g id="tree">
+      <rect x="-4" y="-30" width="8" height="30" fill="#8a6a4a"/>
+      <circle cx="0" cy="-52" r="28" fill="#8fc3a0"/>
+      <circle cx="-14" cy="-40" r="18" fill="#7bb592"/>
+    </g>
+  </defs>
+
+  <!-- 空 -->
+  <rect width="1440" height="560" fill="url(#sky)"/>
+  <g class="cloud" fill="#fff" opacity=".9">
+    <path d="M200 140a30 30 0 0 1 58-10a24 24 0 0 1 40 18h-118a22 22 0 0 1 20-8z"/>
+    <path d="M760 90a26 26 0 0 1 50-8a20 20 0 0 1 34 16h-100a18 18 0 0 1 16-8z"/>
+  </g>
+
+  <!-- 遠景の街並み -->
+  <g fill="#c9dcf2">
+    <rect x="0" y="430" width="70" height="130"/><rect x="80" y="390" width="56" height="170"/>
+    <rect x="146" y="450" width="90" height="110"/><rect x="560" y="420" width="64" height="140"/>
+    <rect x="636" y="380" width="44" height="180"/><rect x="690" y="440" width="80" height="120"/>
+    <rect x="1240" y="400" width="60" height="160"/><rect x="1310" y="430" width="130" height="130"/>
+  </g>
+  <g fill="#e3edf9">
+    <rect x="92" y="404" width="10" height="10"/><rect x="114" y="404" width="10" height="10"/>
+    <rect x="92" y="428" width="10" height="10"/><rect x="114" y="428" width="10" height="10"/>
+    <rect x="646" y="396" width="8" height="8"/><rect x="662" y="396" width="8" height="8"/>
+    <rect x="646" y="416" width="8" height="8"/><rect x="662" y="416" width="8" height="8"/>
+  </g>
+
+  <!-- 家並み -->
+  <g>
+    <path d="M250 560v-80l55-42 55 42v80z" fill="#fff"/>
+    <path d="M240 486l65-54 65 54-8 6-57-46-57 46z" fill="#1f5aa6"/>
+    <rect x="290" y="512" width="30" height="48" fill="#0b2a55"/>
+    <rect x="262" y="496" width="20" height="18" fill="#bfd6f0"/>
+    <rect x="330" y="496" width="20" height="18" fill="#bfd6f0"/>
+
+    <path d="M400 560v-64h120v64z" fill="#f7f1e6"/>
+    <path d="M392 500l68-46 68 46z" fill="#0b2a55"/>
+    <rect x="414" y="512" width="22" height="20" fill="#bfd6f0"/>
+    <rect x="482" y="512" width="22" height="20" fill="#bfd6f0"/>
+    <rect x="448" y="520" width="24" height="40" fill="#f4b400"/>
+  </g>
+  <use href="#tree" x="220" y="560"/>
+  <use href="#tree" x="545" y="560"/>
+  
+  <!-- 工事看板 -->
+  <g>
+    <rect x="1358" y="500" width="6" height="60" fill="#56606c"/>
+    <rect x="1406" y="500" width="6" height="60" fill="#56606c"/>
+    <rect x="1345" y="470" width="80" height="50" rx="3" fill="#fff" stroke="#0b2a55" stroke-width="3"/>
+    <rect x="1345" y="470" width="80" height="12" rx="3" fill="#f4b400"/>
+    <text x="1385" y="508" font-family="sans-serif" font-size="13" font-weight="700" fill="#0b2a55" text-anchor="middle">工事中</text>
+  </g>
+
+  <use href="#cone" x="1080" y="560"/>
+
+  <!-- 走る車 -->
+  <g class="car">
+    <path d="M0 548v-16q0-6 6-8l22-4l16-18q4-4 10-4h52q6 0 10 4l18 20q14 2 18 8v18z" fill="#1f5aa6"/>
+    <path d="M50 520l12-14h20v14zM88 520v-14h18l12 14z" fill="#d6e8fb"/>
+    <circle cx="34" cy="550" r="10" fill="#2a2f38"/><circle cx="34" cy="550" r="4" fill="#9aa3ad"/>
+    <circle cx="122" cy="550" r="10" fill="#2a2f38"/><circle cx="122" cy="550" r="4" fill="#9aa3ad"/>
+  </g>
+
+  <!-- ===== 地下（断面） ===== -->
+  <rect y="615" width="1440" height="285" fill="url(#soil)"/>
+  <rect y="615" width="1440" height="285" fill="url(#dots)"/>
+  <rect y="584" width="1440" height="31" fill="#9aa3ad"/>
+  <rect y="584" width="1440" height="31" fill="url(#gravel)" opacity=".6"/>
+  <rect y="560" width="1440" height="24" fill="#3d4757"/>
+  <rect y="560" width="1440" height="3" fill="#5a6474"/>
+
+  <!-- 掘削した溝 -->
+  <path d="M1150 560 L1170 720 L1310 720 L1330 560z" fill="#b98d5e"/>
+  <path d="M1170 720 L1310 720 L1306 700 L1174 700z" fill="#a67a4c"/>
+  <g stroke="#7a5a3a" stroke-width="5" stroke-linecap="round">
+    <line x1="1165" y1="600" x2="1315" y2="600"/>
+    <line x1="1170" y1="640" x2="1312" y2="640"/>
+  </g>
+
+  <!-- マンホール -->
+  <rect x="690" y="584" width="70" height="196" fill="#b9c1ca"/>
+  <rect x="704" y="584" width="42" height="196" fill="#8d96a1"/>
+  <g stroke="#e6e9ed" stroke-width="4">
+    <line x1="712" y1="610" x2="738" y2="610"/><line x1="712" y1="640" x2="738" y2="640"/>
+    <line x1="712" y1="670" x2="738" y2="670"/><line x1="712" y1="700" x2="738" y2="700"/>
+    <line x1="712" y1="730" x2="738" y2="730"/>
+  </g>
+  <rect x="682" y="556" width="86" height="8" rx="3" fill="#0b2a55"/>
+
+  <!-- 水道管（上水） -->
+  <rect y="652" width="1440" height="34" rx="0" fill="#1f5aa6"/>
+  <rect y="656" width="1440" height="7" fill="#4f8fd8"/>
+  <line x1="0" y1="672" x2="1440" y2="672" stroke="#bfe3ff" stroke-width="5" stroke-linecap="round" class="flow-w"/>
+  <g fill="#0b2a55">
+    <rect x="160" y="646" width="16" height="46" rx="3"/><rect x="520" y="646" width="16" height="46" rx="3"/>
+    <rect x="980" y="646" width="16" height="46" rx="3"/>
+  </g>
+  <!-- 家への給水管 -->
+  <rect x="450" y="584" width="14" height="70" fill="#1f5aa6"/>
+  <rect x="444" y="596" width="26" height="14" rx="3" fill="#0b2a55"/>
+
+  <!-- 下水管 -->
+  <rect y="770" width="1440" height="60" fill="#6f7c8a"/>
+  <rect y="776" width="1440" height="10" fill="#8e9aa7"/>
+  <line x1="0" y1="808" x2="1440" y2="808" stroke="#c8d3de" stroke-width="6" stroke-linecap="round" class="flow-s"/>
+  <g fill="#56606c">
+    <rect x="320" y="762" width="18" height="76" rx="3"/><rect x="1100" y="762" width="18" height="76" rx="3"/>
+  </g>
+  <rect x="690" y="764" width="70" height="12" fill="#56606c"/>
+
+  <!-- ショベルカー -->
+  <g>
+    <rect x="880" y="526" width="170" height="30" rx="15" fill="#3a3f48"/>
+    <g fill="#6b7480"><circle cx="900" cy="541" r="9"/><circle cx="935" cy="541" r="7"/><circle cx="965" cy="541" r="7"/><circle cx="995" cy="541" r="7"/><circle cx="1030" cy="541" r="9"/></g>
+    <rect x="895" y="496" width="140" height="32" rx="4" fill="#f4b400"/>
+    <path d="M900 496v-58h58l18 58z" fill="#f4b400"/>
+    <path d="M910 492v-44h40l13 44z" fill="#bfe0ff"/>
+    <rect x="880" y="500" width="22" height="26" rx="3" fill="#d99c00"/>
+    <g class="arm">
+      <path d="M1000 500 L1035 470 L1115 418 L1128 432 L1050 488 L1018 512z" fill="#f4b400"/>
+      <path d="M1112 420 L1124 412 L1208 628 L1190 634z" fill="#e3a700"/>
+      <path d="M1186 626 l28 -8 l12 30 q-20 20 -44 8z" fill="#3a3f48"/>
+      <circle cx="1035" cy="470" r="7" fill="#d99c00"/>
+      <circle cx="1118" cy="424" r="7" fill="#d99c00"/>
+    </g>
+  </g>
+  <!-- 溝の中の作業員 -->
+  <use href="#worker" x="1275" y="616"/>
+
+  <!-- ラベル -->
+  <g font-family="sans-serif" font-size="13" font-weight="700" text-anchor="middle">
+    <rect x="236" y="622" width="84" height="24" rx="12" fill="#fff"/>
+    <text x="278" y="639" fill="#1f5aa6">上水道管</text>
+    <rect x="236" y="738" width="84" height="24" rx="12" fill="#fff"/>
+    <text x="278" y="755" fill="#56606c">下水道管</text>
+    <rect x="772" y="700" width="96" height="24" rx="12" fill="#fff"/>
+    <text x="820" y="717" fill="#0b2a55">マンホール</text>
+    <rect x="1040" y="590" width="84" height="24" rx="12" fill="#0b2a55"/>
+    <text x="1082" y="607" fill="#fff">掘削工事</text>
+  </g>
+</svg>

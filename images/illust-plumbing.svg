@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400">
+  <title>給排水・設備工事：住宅の給湯器と地中の浄化槽をつなぐ配管</title>
+  <style>.flow{stroke-dasharray:10 16;animation:f 1.6s linear infinite}@keyframes f{to{stroke-dashoffset:-52}}@media (prefers-reduced-motion:reduce){.flow{animation:none}}</style>
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#dcebfa"/><stop offset="1" stop-color="#f6f9fd"/></linearGradient>
+    <linearGradient id="soil" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#e8cfa5"/><stop offset="1" stop-color="#d2ad7c"/></linearGradient>
+    <pattern id="dots" width="34" height="26" patternUnits="userSpaceOnUse"><circle cx="6" cy="6" r="2.2" fill="#c49a6c" opacity=".55"/><circle cx="23" cy="18" r="1.6" fill="#b88b5c" opacity=".5"/></pattern>
+    <pattern id="gravel" width="18" height="12" patternUnits="userSpaceOnUse"><circle cx="4" cy="4" r="2" fill="#7d8792"/><circle cx="13" cy="9" r="1.6" fill="#6c7681"/></pattern>
+    <g id="worker">
+      <rect x="-9" y="52" width="8" height="30" rx="3" fill="#13305c"/><rect x="1" y="52" width="8" height="30" rx="3" fill="#13305c"/>
+      <rect x="-11" y="78" width="11" height="6" rx="2" fill="#2a2f38"/><rect x="0" y="78" width="11" height="6" rx="2" fill="#2a2f38"/>
+      <rect x="-13" y="22" width="26" height="34" rx="7" fill="#1f5aa6"/><rect x="-13" y="38" width="26" height="4" fill="#f4b400"/>
+      <circle cx="0" cy="12" r="9" fill="#f2c9a0"/><path d="M-11 10a11 11 0 0 1 22 0z" fill="#f4b400"/><rect x="-13" y="8" width="26" height="3.5" rx="1.5" fill="#f4b400"/>
+    </g>
+    <g id="cone"><path d="M-10 0 L-3 -30 L3 -30 L10 0z" fill="#f08a24"/><path d="M-7 -12 L7 -12 L5.6 -18 L-5.6 -18z" fill="#fff"/><rect x="-13" y="-3" width="26" height="4" rx="1" fill="#3a3f48"/></g>
+    <g id="tree"><rect x="-4" y="-30" width="8" height="30" fill="#8a6a4a"/><circle cx="0" cy="-52" r="28" fill="#8fc3a0"/><circle cx="-14" cy="-40" r="18" fill="#7bb592"/></g>
+  </defs>
+  <rect width="600" height="230" fill="url(#sky)"/>
+  <!-- 住宅 -->
+  <path d="M60 230v-120h220v120z" fill="#fff"/>
+  <path d="M40 116l130 -76 130 76 -10 8 -120 -70 -120 70z" fill="#0b2a55"/>
+  <rect x="86" y="140" width="50" height="40" fill="#bfd6f0"/><rect x="190" y="140" width="50" height="40" fill="#bfd6f0"/>
+  <rect x="146" y="178" width="34" height="52" fill="#f4b400"/>
+  <!-- 給湯器 -->
+  <rect x="290" y="146" width="56" height="66" rx="5" fill="#f3f5f8" stroke="#9aa3ad" stroke-width="2"/>
+  <rect x="300" y="158" width="36" height="6" rx="2" fill="#9aa3ad"/><circle cx="330" cy="196" r="5" fill="#e0492f"/>
+  <g stroke="#9aa3ad" stroke-width="5" fill="none"><path d="M302 212v30"/><path d="M318 212v30"/><path d="M334 212v30"/></g>
+  <use href="#tree" x="540" y="230"/>
+  <!-- 地中 -->
+  <rect y="230" width="600" height="170" fill="url(#soil)"/><rect y="230" width="600" height="170" fill="url(#dots)"/>
+  <rect y="226" width="600" height="6" fill="#a87b52"/>
+  <!-- 給水管 -->
+  <path d="M0 270 H318 V232" stroke="#1f5aa6" stroke-width="12" fill="none"/>
+  <path d="M0 270 H318" stroke="#bfe3ff" stroke-width="3" fill="none" class="flow"/>
+  <rect x="30" y="252" width="44" height="34" rx="3" fill="#0b2a55"/><rect x="38" y="260" width="28" height="10" rx="2" fill="#bfe3ff"/>
+  <!-- 排水管 → 浄化槽 -->
+  <path d="M200 232 V310 H400" stroke="#8e9aa7" stroke-width="14" fill="none"/>
+  <path d="M200 310 H400" stroke="#d6dde5" stroke-width="3" fill="none" class="flow"/>
+  <!-- 浄化槽 -->
+  <rect x="400" y="268" width="150" height="104" rx="40" fill="#f7f9fb" stroke="#9aa3ad" stroke-width="3"/>
+  <g fill="#cfd8e2"><rect x="438" y="232" width="24" height="40"/><rect x="490" y="232" width="24" height="40"/></g>
+  <g fill="#0b2a55"><rect x="434" y="226" width="32" height="7" rx="2"/><rect x="486" y="226" width="32" height="7" rx="2"/></g>
+  <line x1="475" y1="286" x2="475" y2="360" stroke="#cfd8e2" stroke-width="3"/>
+  <rect x="404" y="320" width="142" height="48" rx="20" fill="#bfe3ff" opacity=".6"/>
+  <g font-family="sans-serif" font-size="13" font-weight="700" text-anchor="middle">
+    <rect x="433" y="376" width="84" height="22" rx="11" fill="#fff"/><text x="475" y="392" fill="#0b2a55">浄化槽</text>
+    <rect x="276" y="114" width="84" height="22" rx="11" fill="#fff"/><text x="318" y="130" fill="#0b2a55">給湯器</text>
+  </g>
+</svg>
