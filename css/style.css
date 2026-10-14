@@ -85,16 +85,16 @@ h1, h2, h3, p { margin: 0; }
   display: flex; align-items: center; justify-content: space-between;
 }
 .logo { display: flex; align-items: center; gap: 12px; }
-.logo__mark {
-  width: 44px; height: 44px; flex-shrink: 0;
-  display: grid; place-items: center;
-  background: var(--navy); color: #fff;
-  font: 900 24px/1 var(--font-serif);
-  border-bottom: 4px solid var(--accent);
-}
-.logo__text { display: flex; flex-direction: column; line-height: 1.3; }
-.logo__ja { font-weight: 700; font-size: 19px; letter-spacing: .1em; }
-.logo__en { font: 500 10px/1.4 var(--font-en); letter-spacing: .18em; opacity: .8; }
+.logo__mark { position: relative; width: 52px; height: 52px; flex-shrink: 0; }
+.logo__mark-img { position: absolute; inset: 0; width: 100%; height: 100%; }
+.logo__mark-img--white { opacity: 0; }
+.header.is-menu-open .logo__mark-img { opacity: 0; }
+.header.is-menu-open .logo__mark-img--white { opacity: 1; }
+.logo__text { display: flex; flex-direction: column; line-height: 1.25; }
+.logo__en { font: 700 18px/1.15 "Montserrat", var(--font); letter-spacing: .02em; color: #2b3f56; }
+.logo__ja { font-weight: 700; font-size: 12px; letter-spacing: .14em; color: var(--blue); }
+.header.is-menu-open .logo__en,
+.header.is-menu-open .logo__ja { color: #fff; }
 
 .gnav { display: flex; align-items: center; height: 100%; }
 .gnav__list { display: flex; gap: 36px; padding-right: 40px; }
@@ -303,7 +303,8 @@ h1, h2, h3, p { margin: 0; }
 /* ---------- フッター ---------- */
 .footer { background: #071c3a; color: #c8d3e3; padding: 64px 0 24px; font-size: 14px; }
 .footer__inner { display: flex; justify-content: space-between; gap: 40px; flex-wrap: wrap; }
-.footer__name { font-size: 20px; font-weight: 700; color: #fff; margin-bottom: 12px; }
+.footer__name { margin-bottom: 16px; }
+.footer__name img { width: 260px; }
 .footer__nav { display: grid; grid-template-columns: repeat(2, auto); gap: 8px 48px; }
 .footer__nav a:hover { color: #fff; text-decoration: underline; }
 .footer__copy {
@@ -381,9 +382,10 @@ h1, h2, h3, p { margin: 0; }
   .hero__content { padding: calc(var(--header-h) + 4vh) 16px 32px; }
   .header__inner { padding-left: 16px; }
   .pc-only { display: none; }
-  .logo__mark { width: 38px; height: 38px; font-size: 20px; }
-  .logo__ja { font-size: 16px; }
-  .logo__en { display: none; }
+  .logo { gap: 8px; }
+  .logo__mark { width: 42px; height: 42px; }
+  .logo__en { font-size: 15px; }
+  .logo__ja { font-size: 11px; }
 
   .heading { margin-bottom: 40px; }
   .lead { margin: -16px 0 40px; }

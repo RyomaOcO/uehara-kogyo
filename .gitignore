@@ -1,3 +1,5 @@
 preview/
 *.png
 !images/*.png
+!/favicon.png
+!/apple-touch-icon.png

@@ -9,7 +9,8 @@ HTML / CSS / JavaScript だけで作った静的サイトなので、`index.html
 index.html     … ページ本体（文章はここを編集）
 css/style.css  … デザイン（色は先頭の :root で一括変更可）
 js/main.js     … スマホメニュー・スクロール演出
-images/        … イラスト（illust-*.svg、オリジナル）と施工事例の写真（works-*）
+images/        … ロゴ（logo-*）、イラスト（illust-*.svg、オリジナル）、施工事例の写真（works-*）
+favicon.png    … ブラウザのタブに出るアイコン
 ```
 
 ## 公開方法（例）
@@ -27,3 +28,14 @@ GitHub Pages を使う場合：リポジトリの Settings → Pages で
 - お知らせの内容、採用情報
 - 施工事例の写真（現在は小さい画像を拡大しているため、元の大きい写真があると綺麗になります）
 - 施工事例の説明文（写真から推測して作成）
+
+## ロゴ
+
+Canva で作成（デザイン名「上原工業 ロゴ（UEHARA CONSTRUCTION）」）。
+編集: https://www.canva.com/d/Zm_M2boMF47m_58
+
+- `images/logo.png` … 通常版（明るい背景用）
+- `images/logo-white.png` … 白抜き版（紺など暗い背景用）
+- `images/logo-mark.png` … マークのみ（アイコン用）
+
+Canva の無料プランでは透過PNGを書き出せないため、白背景で書き出したものを透過処理しています。
